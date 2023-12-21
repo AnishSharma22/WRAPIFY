@@ -9,27 +9,6 @@ import './css/auth.css';
 
 
 const MainPage = () => {
-
-
-    const handleLogin = () => {
-        const client_id = '4dfdc4736a2b4c57bbfa387cecba9a1b';
-        const redirect_uri = encodeURIComponent('http://localhost:3000/callback');
-        const scope = 'user-read-private user-read-email user-top-read';
-        const state = Math.random().toString(36).substring(2, 15);
-        
-    
-        // Construct the Spotify authorization URL
-
-        
-
-        const authURL = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_uri}&state=${state}&show_dialog=true`;
-        
-        
-    
-        // Redirect to Spotify authorization URL
-        window.location.href = authURL;
-      };
-
   return (
     <div className="font-ProximaRegular bg-[#0d0d0d] text-white">
       <div className="fixed top-0 left-0 right-0 z-40 bg-[#0d0d0d]">
@@ -80,9 +59,12 @@ const MainPage = () => {
             Explore & generate spotify wrap anywhere
             anytime with spot-wrap.
           </p>
-          <Button className="cursor-pointer shadow-md px-5 py-2 bg-[#2bb540] glow-on-hover rounded-3xl mt-6  w-fit" onClick={handleLogin}>
-            Get Started
-          </Button>
+          <Link to="http://localhost:3000/login">
+            <Button className="cursor-pointer shadow-md px-5 py-2 bg-[#2bb540] glow-on-hover rounded-3xl mt-6 w-fit">
+              Get Started
+            </Button>
+          </Link>
+          
         </div>
       </div>
       <div>

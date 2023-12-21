@@ -3,6 +3,8 @@ const cors = require('cors');
 const axios = require('axios');
 const querystring = require('querystring');
 const cookieParser = require('cookie-parser');
+const path = require('path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 
 
 
@@ -13,9 +15,23 @@ app.use(cors({
   }));
 app.use(cookieParser());
 
-const client_id = '4dfdc4736a2b4c57bbfa387cecba9a1b';
-const client_secret = '1f620fedc99143f0b718436f1dc333f5';
-const redirect_uri = 'http://localhost:3000/callback';
+const client_id = process.env.CLIENT_ID;
+const client_secret = process.env.CLIENT_SECRET;
+const redirect_uri =process.env.REDIRECT_URL;
+
+
+app.get('/login',(req,res)=>{
+
+      const redirect_url = encodeURIComponent(redirect_uri);
+      const scope = 'user-read-private user-read-email user-top-read';
+      const state = Math.random().toString(36).substring(2, 15);
+      
+  
+      // Construct the Spotify authorization URL
+      const authURL = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_url}&state=${state}&show_dialog=true`;
+      res.redirect(authURL);
+
+});
 
 app.get('/callback', async function (req, res) {
   const code = req.query.code || null;

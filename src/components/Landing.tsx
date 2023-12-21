@@ -38,6 +38,7 @@ const Landing = () => {
         } catch (error) {
             // Handle errors
             console.error('Error fetching data:', error);
+            navigate('/mainPage');
         }
     };
 
@@ -57,6 +58,7 @@ const Landing = () => {
       navigate("/firstPage");
     } catch (error) {
       console.error("Error occurred:", error);
+      navigate('/mainPage');
     }
   };  
   const handleLogout = async () => {
@@ -91,7 +93,13 @@ const Landing = () => {
         </Button>
       </div>
       <div className="bg-red-200 h-40 w-40 mt-20 text-black">
-        {artistProps.length}
+            {artistProps.map((val, index) => {
+        return (
+          <div key={index}>
+            {index + 1}. <span>{val.name}</span>
+          </div>
+        );
+      })}
         <br />
         {trackProps.length}
       </div>
