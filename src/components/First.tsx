@@ -26,20 +26,12 @@ const First = () => {
   return (
    
       <div>
-          <div>
-            <h1 className="scroll-m-20 text-5xl font-semibold tracking-tight">
-                Hello {user?.display_name} 
-                
-            </h1>
-          </div>
-      
-     
-      <div className="flex flex-col bg-black text-white h-screen justify-center items-center ">
-          
-          <div className='my-4'>
+          <div className="flex flex-col bg-black text-white h-screen justify-center items-center ">   
+            <div className='my-4'>
+                <div>hello {user?.display_name}</div>
                 <p>Its Wrapped time. </p>
                 <p>Ready? Let's do this.</p>
-          </div>    
+            </div>    
       </div>
       
     </div>

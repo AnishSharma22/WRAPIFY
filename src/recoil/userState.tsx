@@ -1,24 +1,44 @@
+import { atom, RecoilState } from "recoil";
 
-import { atom } from "recoil";
+interface UserType {
+  display_name: string;
+  email : string
+  images: { url: string }[];
+}
 
+interface ArtistType {
+  name: string;
+  images: { url: string }[];
+}
 
+interface TrackType {
+  name: string;
+  album: {
+    images: { url: string }[];
+  };
+}
 
-export const userState = atom({
-    key: 'userState', // unique ID (with respect to other atoms/selectors)
-    default: {} // default value (aka initial value)
+// Atom declarations
+export const userState: RecoilState<UserType> = atom({
+  key: 'userState',
+  default: {
+    display_name: '',
+    email: '',
+    images: [{ url: '' }]
+  }
 });
-export const artistState = atom({
-    key: 'artistState', // unique ID (with respect to other atoms/selectors)
-    default: [], // default value (aka initial value)
-});
-export const trackState = atom({
-    key: 'trackState', // unique ID (with respect to other atoms/selectors)
-    default: [] // default value (aka initial value)
+
+export const artistState: RecoilState<ArtistType[]> = atom({
+  key: 'artistState',
+  default: []
 });
 
-export const boolState = atom({
-    key:'boolState',
-    default: false
-})
+export const trackState: RecoilState<TrackType[]> = atom({
+  key: 'trackState',
+  default : []
+});
 
-
+export const boolState: RecoilState<boolean> = atom({
+  key: 'boolState',
+  default: false
+});

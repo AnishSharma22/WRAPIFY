@@ -18,7 +18,7 @@ const App = () => {
       <Router>
       <RecoilRoot>
         <Routes>
-          <Route path={"/mainPage"} element={<MainPage />} />
+          <Route path={"/"} element={<MainPage />} />
           <Route path={"/landingPage"} element={<Landing />} />
           <Route path={"/firstPage"} element={<First />} />
           <Route path={"/secondPage"} element={<Second />} />

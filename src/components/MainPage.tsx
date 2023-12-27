@@ -21,7 +21,7 @@ const MainPage = () => {
               className="text-center uppercase mx-2 
               tracking-wider font-ProximaBold bg-[#0d0d0d]"
             >
-              SPOT-WRAP
+              WRAPIFY
             </h1>
           </div>
           <div className="flex uppercase text-sm">
@@ -53,17 +53,17 @@ const MainPage = () => {
             tablet:leading-[4rem] mobile:text-[35px] mobile:leading-[2.5rem]"
           >
             Download & use Free
-            <br /> Spot Wrap!
+            <br /> Wrapify!
           </h1>
           <p className="text-center mt-4 max-w-[600px] mx-auto text-[18px] px-8">
             Explore & generate spotify wrap anywhere
-            anytime with spot-wrap.
+            anytime with Wrapify.
           </p>
           <Link to="http://localhost:3000/login">
             <Button className="cursor-pointer shadow-md px-5 py-2 bg-[#2bb540] glow-on-hover rounded-3xl mt-6 w-fit">
               Get Started
             </Button>
-          </Link>
+          </Link> 
           
         </div>
       </div>

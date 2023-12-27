@@ -20,15 +20,18 @@ const client_secret = process.env.CLIENT_SECRET;
 const redirect_uri =process.env.REDIRECT_URL;
 
 
+
+
 app.get('/login',(req,res)=>{
 
       const redirect_url = encodeURIComponent(redirect_uri);
       const scope = 'user-read-private user-read-email user-top-read';
       const state = Math.random().toString(36).substring(2, 15);
+      const session = req.cookies.access_token ? false : true;
       
   
       // Construct the Spotify authorization URL
-      const authURL = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_url}&state=${state}&show_dialog=true`;
+      const authURL = `https://accounts.spotify.com/authorize?response_type=code&client_id=${client_id}&scope=${scope}&redirect_uri=${redirect_url}&state=${state}&show_dialog=${session}`;
       res.redirect(authURL);
 
 });
@@ -56,7 +59,7 @@ app.get('/callback', async function (req, res) {
       });
 
       // Handle successful response here
-      console.log(response.data);
+      // console.log(response.data);
 
       if(req.cookies.access_token){
         res.clearCookie('access_token');
@@ -96,7 +99,7 @@ app.get('/wrapper', async (req, res) => {
             topTracks: topTracks.data.items,
             topArtists: topArtists.data.items
           };
-            console.log(concatenatedResponse);
+            console.log(concatenatedResponse.topTracks);
             res.status(200).send(concatenatedResponse);
             
             // Handle user data or further actions
@@ -151,7 +154,7 @@ app.get('/wrapper', async (req, res) => {
         }
     } catch (error) {
         console.error('Error occurred:', error);
-        res.redirect('http://localhost:5173/mainPage');
+        res.redirect('http://localhost:5173/');
     }
 });
 
