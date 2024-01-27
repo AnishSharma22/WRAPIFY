@@ -3,7 +3,12 @@ import landingImage from './images/landing_page.png';
 import octoImage from './images/Octocat.png';
 import githubLogo from './images/GitHub_Logo.png';
 import spofifyLogo from './images/wrapify_logo2.png';
-import vibhorLogo from './images/vibhor.jpeg';
+import logo1 from './images/testimonialPic1.jpeg';
+import logo2 from './images/testimonialPic2.jpeg';
+import logo3 from './images/testimonialPic3.jpg';
+import image1 from './images/im1.png';
+import image2 from './images/im2.png';
+import image3 from './images/im3.png';
 import { Button } from "./ui/button";
 import './css/auth.css';
 
@@ -68,20 +73,29 @@ const MainPage = () => {
         </div>
       </div>
       <div>
-        <div
-          className=" bg-[#0d0d0d]  backdrop-blur-[50px] 
-      max-w-[1280px] mx-auto mobile:hidden"
-        >
-          <div className="max-w-[1000px] mx-auto">
-             <img
-            src={landingImage}
-            alt="image"
-            className="rounded-md noDrag m-0 p-0"
-            style={{ width: "1000px", height: "500px", objectFit: "contain" }}
-            />
+      <div className="bg-transparent backdrop-blur-[50px] max-w-[1280px] mx-auto mobile:hidden">
+  <div className="flex flex-wrap max-w-[1000px] mx-auto">
+    <img
+      src={image2}
+      alt="image"
+      className="rounded-md noDrag m-0 p-4 w-full sm:w-1/2 lg:w-1/3"
+      style={{ objectFit: "contain" }}
+    />
+    <img
+      src={image1}
+      alt="image"
+      className="rounded-md noDrag m-0 p-4 w-full sm:w-1/2 lg:w-1/3"
+      style={{ objectFit: "contain" }}
+    />
+    <img
+      src={image3}
+      alt="image"
+      className="rounded-md noDrag m-0 p-4 w-full sm:w-1/2 lg:w-1/3"
+      style={{ objectFit: "contain" }}
+    />
+  </div>
+</div>
 
-          </div>
-        </div>
         <div className="overflow-hidden pl-10">
           <div className="hidden mobile:block relative h-[400px] w-[600px]">
           <img
@@ -109,31 +123,31 @@ const MainPage = () => {
   <div className="grid gap-6 px-6 md:grid-cols-2 lg:grid-cols-3">
     <div className="bg-gradient-to-tr to-[#a15c1c] from-[#6a2009] py-4 px-6 rounded-md flex flex-col items-center mb-6">
       <div className="mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
-        <img src={vibhorLogo} alt="logo" className="w-full h-full object-cover rounded-full" />
+        <img src={logo1} alt="logo" className="w-full h-full object-cover rounded-full" />
       </div>
-      <h1 className="text-xl font-ProximaBold mb-2"> - Vibhor Sharma</h1>
+      <h1 className="text-xl font-ProximaBold mb-2"> - Ojusav Agarwal</h1>
       <p className="font-light">
-        Spot-Wrap has been a game-changer! It's purely dedicated to creating Spotify wraps across all devices. The simplicity in generating Spotify wraps for short, medium, or long terms is unparalleled. It has made my Spotify playlist curation effortless and fun!" - Emily
+      Say goodbye to boring data dumps! Wrapify turns your listening into a visual masterpiece.  I can't stop sharing my results with everyone. Plus, it's free? What's not to love?
       </p>
     </div>
 
     <div className="bg-gradient-to-b from-[#8b0847] to-[#580b64] py-4 px-6 rounded-md flex flex-col items-center mb-6">
       <div className="mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
-        <img src={vibhorLogo} alt="logo" className="w-full h-full object-cover rounded-full" />
+        <img src={logo2} alt="logo" className="w-full h-full object-cover rounded-full" />
       </div>
-      <h1 className="text-xl font-ProximaBold mb-2"> - Vibhor Sharma</h1>
+      <h1 className="text-xl font-ProximaBold mb-2"> - Sumedha Pandey</h1>
       <p className="font-light">
-        Available for all screens - Mobile, tablet, laptop, and desktop. The app is made to give a user the full experience of the Spotify client. It has an almost identical UI to Spotify for every page.
+      Warning: Wrapify may cause excessive social media sharing. My friends haven't stopped laughing at my questionable top artists. Hilarious UI, lightning speed, zero regrets. Addicted!
       </p>
     </div>
 
-    <div className="bg-gradient-to-tr to-[#0d2477] from-[#522bbf] py-4 px-6 rounded-md flex flex-col items-center mb-6">
-      <div className="mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
-        <img src={vibhorLogo} alt="logo" className="w-full h-full object-cover rounded-full" />
+    <div  className="bg-gradient-to-tr to-[#0d2477] from-[#522bbf] py-4 px-6 rounded-md flex flex-col items-center mb-6">
+      <div style={{height:"103px"}} className="mt-3 w-24  bg-transparent p-3 rounded-full text-center flex items-center">
+        <img src={logo3} alt="logo" className="w-full h-full object-cover rounded-full" />
       </div>
-      <h1 className="text-xl font-ProximaBold mb-2"> - Vibhor Sharma</h1>
+      <h1 className="text-xl font-ProximaBold mb-2"> - Modi Ji</h1>
       <p className="font-light">
-        Available for all screens - Mobile, tablet, laptop, and desktop. The app is made to give a user the full experience of the Spotify client. It has an almost identical UI to Spotify for every page.
+      Wrapify unwrapped my music soul! I never knew I was such a genre-hopping chameleon. The visuals are fire, the stats are spicy, and it's free like confetti at a Taylor Swift concert.
       </p>
     </div>
   </div>
@@ -143,10 +157,12 @@ const MainPage = () => {
       2023, Made by{" "}
       <Link to="https://github.com/AnishSharma22">
         <span className="underline text-[#2bb540] cursor-pointer">Anish Sharma</span>
+        <span className=" text-white cursor-pointer"> and </span>
+        <span className="underline text-[#2bb540] cursor-pointer">Vibhor Sharma</span>
       </Link>
     </p>
     <p className="text-sm mt-1 text-center">
-      Tech stack: React-JS, Algolia, Nodejs, and PostgreSQL.
+      Tech stack: React-JS, Spotify Web Api and Nodejs.
     </p>
     <Link to="https://github.com/AnishSharma22" target="_blank">
       <div className="mt-5 flex px-3 py-2 bg-[#fff] rounded-3xl">

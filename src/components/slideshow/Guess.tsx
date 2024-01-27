@@ -69,7 +69,7 @@ import { userState } from '@/recoil/userState';
 
     // Check if user exists and has required properties before accessing them
     return (
-      <div className='super-div py-20'>
+      <div style={{background:"linear-gradient(180deg, #008D82 0%, #C54232 45%, #000000 100%)"}} className='super-div py-20'>
 
         <div className='pager'>
 

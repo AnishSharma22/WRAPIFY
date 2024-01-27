@@ -70,7 +70,7 @@ import { topGenreState, userState } from '@/recoil/userState';
 
     // Check if user exists and has required properties before accessing them
     return (
-      <div className='super-div py-20'>
+      <div style={{background:"linear-gradient(180deg, #ED1617 0%, #202673 45%, #000000 100%)"}} className='super-div py-20'>
 
         <div className='pager'>
 
@@ -81,7 +81,7 @@ import { topGenreState, userState } from '@/recoil/userState';
           </div>
 
           <div className='limiter genre fader p-6 flex justify-center items-center text-white' style={{position: 'relative'}}>
-            <ul className='list-decimal pl-12 border-l-2 border-white ml-0' style={{ maxWidth: '20rem', maxHeight: '275px', position: 'relative', height:'291px' }}>
+            <ul className='list-decimal pl-12 border-l-2 border-white ml-0' style={{ maxWidth: '15rem', maxHeight: '275px', position: 'relative', height:'291px' }}>
               {/* <img src={emotionJPG} className='imagePlace' style={{  backgroundSize: 'cover' }} alt="" /> */}
               <li>&nbsp;{topGenre[0][0]}</li>
               {/* <p className='artist'>&nbsp; After Oceans</p> */}

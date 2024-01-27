@@ -10,7 +10,6 @@ SpotWrap is an application that allows you to generate personalized Spotify wrap
   - [Local Setup](#local-setup)
 - [Usage](#usage)
 - [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 

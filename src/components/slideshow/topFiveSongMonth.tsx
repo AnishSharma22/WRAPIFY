@@ -174,7 +174,7 @@ import { shortTrackState, userState } from '@/recoil/userState';
                                             {index < shortTrack[4].artists.length - 1 && ', '}
                                           </span>
                                         ))}</p>
-
+            <p className='artist' style={{visibility: 'hidden'}}>&nbsp; Daniel Allan, Lyrah Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim harum, aperiam corporis beatae libero vero inventore expedita totam doloremque odit accusamus tempora modi necessitatibus molestias laboriosam ad. Dolorum, tempore nesciunt.</p>
             </ul>
           </div>
 

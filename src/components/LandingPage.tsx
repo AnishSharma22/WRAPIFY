@@ -31,6 +31,7 @@ const LandingPage = () => {
   };
 
   const playMusic = () => {
+    audio.loop = true;
     audio.play();
     setIsPlaying(true);
   };
@@ -112,10 +113,10 @@ const LandingPage = () => {
     <Loader/>
   }else{
     return (
-        <div className='parent-div fader-2 ' style={{background:"linear-gradient(rgb(0, 0, 0) 0%, #37503A 80%)",color:"white",fontFamily:"Poppins",overflowY:"auto",fontWeight:"500",height:"100vh"}}>
+        <div className='parent-div fader-2 ' style={{background:"linear-gradient(rgb(0, 0, 0) 0%, #37503A 130%)",color:"white",fontFamily:"Poppins",overflowY:"auto",fontWeight:"500",height:"100vh"}}>
     
           <div className='head flex items-center ml-6 sm:ml-6 md:ml-4 lg:ml-20' style={{ position: 'relative', marginTop: '2rem' }} >
-            <img src={spotLogo} alt="Logo" className='w-10 ssm:w-16' />
+            <img src={spotLogo} alt="Logo" className='w-10 h-10 ssm:w-16' />
             <span className='ml-2 ssm:text-3xl text-xl text-[#1DB954]  font-semibold'>Wrapify®</span>
     
             <img src={user?.images && user.images[1]?.url} alt="Logo" className='w-10 ml-auto' style={{ borderRadius: '100%' }} />
@@ -240,11 +241,11 @@ const LandingPage = () => {
             <div className='ml-4 text-2xl'>
               Genres
               <div className='flex flex-row overflow-x-scroll -mx-2 xl:overflow-hidden mt-2' style={{ width: '100%' }}>
-                <button className='genre-2 ml-1 text-sm' style={{}} disabled>{topGenre[0]}</button>
-                <button className='genre-2 ml-4 text-sm sm:min-w-fit' style={{}} disabled>{topGenre[1]}</button>
-                <button className='genre-2 ml-4 text-sm ssm:min-w-fit' style={{}} disabled>{topGenre[2]}</button>
-                <button className='genre-2 ml-4 text-sm sm:min-w-fit' style={{}} disabled>{topGenre[3]}</button>
-                <button className='genre-2 ml-4 text-sm sm:min-w-fit' style={{}} disabled>{topGenre[4]}</button>
+                <button className='genre-2 ml-1 text-sm' style={{}} disabled>{topGenre[0][0]}</button>
+                <button className='genre-2 ml-4 text-sm sm:min-w-fit' style={{}} disabled>{topGenre[1][0]}</button>
+                <button className='genre-2 ml-4 text-sm ssm:min-w-fit' style={{}} disabled>{topGenre[2][0]}</button>
+                <button className='genre-2 ml-4 text-sm sm:min-w-fit' style={{}} disabled>{topGenre[3][0]}</button>
+                <button className='genre-2 ml-4 text-sm sm:min-w-fit' style={{}} disabled>{topGenre[4][0]}</button>
     
               </div>
     
