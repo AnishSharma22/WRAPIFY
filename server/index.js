@@ -82,24 +82,74 @@ app.get('/wrapper', async (req, res) => {
     try {  
         if (req.cookies.access_token) {
           const token = req.cookies.access_token;
-          const [topTracks, topArtists] = await Promise.all([
-            axios.get('https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5&offset=0', {
+          const [topShortTracks, topShortArtists,topMediumTracks,topMediumArtists,topLongTracks,topLongArtists] = await Promise.all([
+            axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5&offset=0`, {
               headers: {
                 Authorization: `Bearer ${token}`
               }
             }),
-            axios.get('https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=5&offset=0', {
+            axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=5&offset=0`, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }),
+            axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5&offset=0`, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }),
+            axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=5&offset=0`, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }),
+            axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5&offset=0`, {
+              headers: {
+                Authorization: `Bearer ${token}`
+              }
+            }),
+            axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50&offset=0`, {
               headers: {
                 Authorization: `Bearer ${token}`
               }
             })
           ]);
+
+          // console.log(topTracks.data);
+          // console.log(topArtists.data);
+
+          // const top5genres = topArtists.data.items.map((val) => val.genres.concat(topGenres));
+          const topGenres = [];
+
+          for (let i = 0; i < 5; i++) {
+            topGenres.push(...topLongArtists.data.items[i].genres);
+          }
+
+          const countMap = new Map();
+            topGenres.forEach(element => {
+              countMap.set(element, (countMap.get(element) || 0) + 1);
+            });
+
+            // Sort by occurrences in descending order
+            const sortedArray = [...countMap.entries()].sort((a, b) => b[1] - a[1]);
+
+            // Get the top 5 elements
+            const top5Genres = sortedArray.slice(0, 5);
+
+          // console.log(top5Genres);
+         
+
         
           const concatenatedResponse = {
-            topTracks: topTracks.data.items,
-            topArtists: topArtists.data.items
+            topShortTracks: topShortTracks.data.items,
+            topShortArtists: topShortArtists.data.items,
+            topMediumTracks : topMediumTracks.data.items,
+            topMediumArtists : topMediumArtists.data.items,
+            topLongTracks : topLongTracks.data.items,
+            topLongArtists : topLongArtists.data.items.slice(0,5),
+            topGenres : top5Genres
           };
-            console.log(concatenatedResponse.topTracks);
+            // console.log(concatenatedResponse.topTracks);
             res.status(200).send(concatenatedResponse);
             
             // Handle user data or further actions
@@ -131,22 +181,64 @@ app.get('/wrapper', async (req, res) => {
             res.cookie('refresh_token', response.data.refreshToken);
 
             // Reuse the earlier axios call to get user data using the new access token
-            const [topTracks, topArtists] = await Promise.all([
-              axios.get('https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5&offset=0', {
+            const [topShortTracks, topShortArtists,topMediumTracks,topMediumArtists,topLongTracks,topLongArtists] = await Promise.all([
+              axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=short_term&limit=5&offset=0`, {
                 headers: {
                   Authorization: `Bearer ${token}`
                 }
               }),
-              axios.get('https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=5&offset=0', {
+              axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=short_term&limit=5&offset=0`, {
+                headers: {
+                  Authorization: `Bearer ${token}`
+                }
+              }),
+              axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=medium_term&limit=5&offset=0`, {
+                headers: {
+                  Authorization: `Bearer ${token}`
+                }
+              }),
+              axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=medium_term&limit=5&offset=0`, {
+                headers: {
+                  Authorization: `Bearer ${token}`
+                }
+              }),
+              axios.get(`https://api.spotify.com/v1/me/top/tracks?time_range=long_term&limit=5&offset=0`, {
+                headers: {
+                  Authorization: `Bearer ${token}`
+                }
+              }),
+              axios.get(`https://api.spotify.com/v1/me/top/artists?time_range=long_term&limit=50&offset=0`, {
                 headers: {
                   Authorization: `Bearer ${token}`
                 }
               })
             ]);
+
+            const topGenres = [];
+
+          for (let i = 0; i < 5; i++) {
+            topGenres.push(...topLongArtists.data.items[i].genres);
+          }
+
+          const countMap = new Map();
+            topGenres.forEach(element => {
+              countMap.set(element, (countMap.get(element) || 0) + 1);
+            });
+
+            // Sort by occurrences in descending order
+            const sortedArray = [...countMap.entries()].sort((a, b) => b[1] - a[1]);
+
+            // Get the top 5 elements
+            const top5Genres = sortedArray.slice(0, 5);
           
             const concatenatedResponse = {
-              topTracks: topTracks.data.items,
-              topArtists: topArtists.data.items
+              topShortTracks: topShortTracks.data.items,
+              topShortArtists: topShortArtists.data.items,
+              topMediumTracks : topMediumTracks.data.items,
+              topMediumArtists : topMediumArtists.data.items,
+              topLongTracks : topLongTracks.data.items,
+              topLongArtists : topLongArtists.data.items.slice(0,5),
+              topGenres : top5Genres
             };
               console.log(concatenatedResponse);
               res.status(200).send(concatenatedResponse);

@@ -1,0 +1,321 @@
+.super-div {
+  /* background: linear-gradient(180deg, rgb(179, 55, 105) 0%, rgba(24, 61, 37, 0.89) 45%, #000000 100%); */
+  font-family: 'Jost', sans-serif;
+  background: linear-gradient(180deg, rgb(55, 120, 179) 0%, rgb(28 24 61 / 89%) 45%, #000000 100%);
+  height: 100vh;
+  font-weight: 400;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.icons {
+  filter: invert(100%);
+}
+
+.heart:hover {
+  transition: all 0.1s ease;
+  transform: scale(1.1);
+}
+
+.press:active{
+  transition: all 0.2s ease;
+  transform: scale(0.9);
+}
+
+.genre {
+  position: relative;
+  top: 2rem;
+  font-size: 1.5rem;
+  line-height: 2.3em;
+  font-weight: 300;
+  right: 2em;
+}
+
+.limiter {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.artist {
+  font-size: 0.8rem;
+  line-height: 0em;
+}
+
+.imagePlace {
+  height: 3.5rem;
+  width: 15em;
+  /* min-width: 15em; */
+  left: 0;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  position: absolute;
+  display: flex;
+  mix-blend-mode: soft-light;
+  opacity: 0;
+  animation: fInAnimation 2s ease forwards;
+  /* z-index: -1; */
+}
+
+@keyframes fInAnimation {
+  to {
+      opacity: 1;
+  }
+}
+
+.mainImage{
+  height: 19rem;
+  width: 19rem;
+  /* left: 0; */
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  /* position: absolute; */
+  display: flex;
+  /* mix-blend-mode: overlay; */
+  /* filter: brightness(60%); */
+  z-index: 10;
+}
+
+.fader {
+  animation: fadeInAnimation ease 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+      opacity: 0;
+  }
+
+  100% {
+      opacity: 1;
+  }
+}
+
+
+.slider {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 20em;
+  height: 0.2em;
+  border-radius: 5px;
+  /* background: linear-gradient(to right, black 0%, black 50%, rgba(178, 135, 212, 1)   50%, rgba(178, 135, 212, 1) 100%); */
+  /* background: #B287D4; */
+  background: linear-gradient(to right, #ffffff 5%, #B287D4 5%);
+  outline: none;
+  /* opacity: ; */
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+  margin-top: 1rem;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  width: 0.6em;
+  height: 0.6em;
+  border-radius: 50%;
+  position: relative;
+  /* right: 8.8em; */
+  background: rgb(255, 255, 255);
+}
+
+.skeleton{
+  opacity: 0.7;
+  animation: skelload 1s linear infinite alternate;
+  border-radius: 0.125rem;
+
+}
+
+.skeleton-text{
+  width: 20rem;
+  height: 1.5rem;
+  border-radius: 0.225rem;
+}
+
+@keyframes skelload {
+  0%{
+      background-color: hsl(200, 20%, 50%);
+  }
+  100%{
+      background-color: hsl(200, 20%, 95%);
+  }
+  
+}
+/* ------------------------------------------------------------------------------------------------------------------------------------------------------ */
+
+/* parent-div {
+   min-height: 100vh; 
+   min-height: auto; 
+
+  background: linear-gradient(rgb(0, 0, 0) 0%, #37503A 120%);
+
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  overflow-y: auto;
+} */
+
+/* * {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+} */
+
+/* CSS */
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000);
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 400% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.tapper:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.tapper:active {
+  transform: scale(0.95);
+  transition: all 0.3s ease;
+}
+
+.button-85:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+.button-85:active {
+  transform: scale(0.98);
+  transition: all 0.3s ease;
+}
+
+/* Target the scrollbar track */
+::-webkit-scrollbar {
+  width: 2px;
+  /* Width of the scrollbar */
+  height: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+  /* Color of the scrollbar handle on hover */
+}
+
+/* Handle on scrollbar press */
+::-webkit-scrollbar-thumb:active {
+  background: #333;
+  /* Color of the scrollbar handle when pressed */
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #dbd9d9;
+  /* Color of the scrollbar handle */
+  border-radius: 16px;
+  /* Rounded corners of the scrollbar handle */
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #454545;
+  /* Color of the scrollbar track */
+}
+
+/* Corner */
+::-webkit-scrollbar-corner {
+  background: #454545;
+  /* Color of the scrollbar track */
+}
+
+.genre-2 {
+  width: auto;
+  padding: 0.4rem 1rem 0.4rem 1rem;
+  border-radius: 3rem;
+  height: 2rem;
+  background-color: #2A2A2A;
+  font-weight: 300;
+  /* min-width:fit-content; */
+  max-width: 15rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 992px) {
+  .genre-2 {
+    min-width: fit-content;
+  }
+}
+
+.fader-2 {
+  opacity: 0;
+  animation: fadeInAnimation 2s ease-in-out forwards;
+}
+

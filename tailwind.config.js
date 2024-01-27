@@ -77,25 +77,12 @@ module.exports = {
     ProximaBold: ["ProximaNova Bold"],
   },
   screens: {
-    mobile: {
-      min: "100px",
-      max: "550px",
-    },
-    tablet: {
-      min: "550px",
-      max: "750px",
-    },
-    "mini-laptop": {
-      min: "750px",
-      max: "874px",
-    },
-    laptop: {
-      min: "874px",
-      max: "1280px",
-    },
-    desktop: {
-      min: "1280px",
-    },
+    'ssm': '407px',
+    'sm': '640px',
+    'md': '968px',
+    'lg': '1024px',
+    'xl': '1300px',
+    '2xl': '1536px',
   },
   borderWidth: {
     DEFAULT: "0.5px",

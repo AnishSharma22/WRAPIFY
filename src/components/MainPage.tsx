@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import landingImage from './images/landing_page.png';
 import octoImage from './images/Octocat.png';
 import githubLogo from './images/GitHub_Logo.png';
-import spofifyLogo from './images/spotify.png';
+import spofifyLogo from './images/wrapify_logo2.png';
 import vibhorLogo from './images/vibhor.jpeg';
 import { Button } from "./ui/button";
 import './css/auth.css';
@@ -95,121 +95,72 @@ const MainPage = () => {
         </div>
       </div>
 
+
+
+
+
+
       <div className="max-w-[1000px] mx-auto">
-       <br /><br /> <hr />
-        <h1 className="text-center text-3xl font-ProximaBold mt-10 mb-10 font-bold">
-          Testimonials
-        </h1>
+  <br /><br /><hr />
+  <h1 className="text-center text-3xl font-ProximaBold mt-10 mb-10 font-bold">
+    Testimonials
+  </h1>
 
-        <div
-          className="grid grid-cols-3 gap-4 mini-laptop:grid-cols-2 px-6
-        tablet:grid-cols-1 mobile:grid-cols-1
-        "
-        >
-          <div
-            className="bg-gradient-to-tr to-[#a15c1c] 
-          from-[#6a2009] py-4 px-6 rounded-md flex text-center 
-          flex-col  items-center"
-          >
-            <div className=" mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
-            <img
-                src={vibhorLogo}
-                alt="logo"
-                className="w-full h-full object-cover rounded-full"
-            />
-            </div>
+  <div className="grid gap-6 px-6 md:grid-cols-2 lg:grid-cols-3">
+    <div className="bg-gradient-to-tr to-[#a15c1c] from-[#6a2009] py-4 px-6 rounded-md flex flex-col items-center mb-6">
+      <div className="mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
+        <img src={vibhorLogo} alt="logo" className="w-full h-full object-cover rounded-full" />
+      </div>
+      <h1 className="text-xl font-ProximaBold mb-2"> - Vibhor Sharma</h1>
+      <p className="font-light">
+        Spot-Wrap has been a game-changer! It's purely dedicated to creating Spotify wraps across all devices. The simplicity in generating Spotify wraps for short, medium, or long terms is unparalleled. It has made my Spotify playlist curation effortless and fun!" - Emily
+      </p>
+    </div>
 
+    <div className="bg-gradient-to-b from-[#8b0847] to-[#580b64] py-4 px-6 rounded-md flex flex-col items-center mb-6">
+      <div className="mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
+        <img src={vibhorLogo} alt="logo" className="w-full h-full object-cover rounded-full" />
+      </div>
+      <h1 className="text-xl font-ProximaBold mb-2"> - Vibhor Sharma</h1>
+      <p className="font-light">
+        Available for all screens - Mobile, tablet, laptop, and desktop. The app is made to give a user the full experience of the Spotify client. It has an almost identical UI to Spotify for every page.
+      </p>
+    </div>
 
-            <h1 className="text-xl font-ProximaBold mb-2  "> - Vibhor Sharma</h1>
-            <p className="font-light">
-            Spot-Wrap has been a game-changer! It's purely dedicated to creating Spotify wraps across all devices. The simplicity in generating Spotify wraps for short, medium, or long terms is unparalleled. It's made my Spotify playlist curation effortless and fun!" - Emily
-            </p>
-          </div>
-          <div
-            className="bg-gradient-to-b from-[#8b0847] 
-          to-[#580b64] py-4 px-6 rounded-md flex text-center 
-          flex-col  items-center"
-          >
-            <div className=" mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
-            <img
-                src={vibhorLogo}
-                alt="logo"
-                className="w-full h-full object-cover rounded-full"
-            />
-            </div>
+    <div className="bg-gradient-to-tr to-[#0d2477] from-[#522bbf] py-4 px-6 rounded-md flex flex-col items-center mb-6">
+      <div className="mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
+        <img src={vibhorLogo} alt="logo" className="w-full h-full object-cover rounded-full" />
+      </div>
+      <h1 className="text-xl font-ProximaBold mb-2"> - Vibhor Sharma</h1>
+      <p className="font-light">
+        Available for all screens - Mobile, tablet, laptop, and desktop. The app is made to give a user the full experience of the Spotify client. It has an almost identical UI to Spotify for every page.
+      </p>
+    </div>
+  </div>
 
-
-            <h1 className="text-xl font-ProximaBold mb-2  "> - Vibhor Sharma</h1>
-            <p className="font-light">
-              Available for all screen Mobile, tablet, laptop and desktop. The
-              app is made to give a user full experience of spotify client. it
-              has almost same Ui as Spotify for every page.
-            </p>
-          </div>
-          <div
-            className="bg-gradient-to-tr to-[#0d2477] 
-          from-[#522bbf] py-4 px-6 rounded-md flex text-center
-           flex-col items-center"
-          >
-            <div className=" mt-3 w-24 bg-transparent p-3 rounded-full text-center flex items-center">
-            <img
-                src={vibhorLogo}
-                alt="logo"
-                className="w-full h-full object-cover rounded-full"
-            />
-            </div>
-
-
-            <h1 className="text-xl font-ProximaBold mb-2  "> - Vibhor Sharma</h1>
-            <p className="font-light">
-              Available for all screen Mobile, tablet, laptop and desktop. The
-              app is made to give a user full experience of spotify client. it
-              has almost same Ui as Spotify for every page.
-            </p>
-          </div>
+  <div className="mt-10 py-10 border-t items-center flex flex-col border-t-slate-800">
+    <p className="text-center">
+      2023, Made by{" "}
+      <Link to="https://github.com/AnishSharma22">
+        <span className="underline text-[#2bb540] cursor-pointer">Anish Sharma</span>
+      </Link>
+    </p>
+    <p className="text-sm mt-1 text-center">
+      Tech stack: React-JS, Algolia, Nodejs, and PostgreSQL.
+    </p>
+    <Link to="https://github.com/AnishSharma22" target="_blank">
+      <div className="mt-5 flex px-3 py-2 bg-[#fff] rounded-3xl">
+        <div className="relative w-[40px] h-[30px]">
+          <img src={octoImage} alt="" className="noDrag" style={{ objectFit: "contain", width: "100%", height: "100%" }} />
         </div>
-        <div
-          className="mt-10  py-10 border-t 
-         items-center flex flex-col border-t-slate-800"
-        >
-          <p className="text-center">
-            2023, Made by{" "}
-            <Link to="https://github.com/AnishSharma22">
-              <span className="underline text-[#2bb540] cursor-pointer">
-                Anish Sharma
-              </span>
-            </Link>
-          </p>
-          <p className="text-sm mt-1 text-center">
-            Tech stack: React-JS, Algolia, Nodejs and PostgreSQL.
-          </p>
-          <Link
-            to="https://github.com/AnishSharma22"
-            target="_blank"
-          >
-            <div className="mt-5 flex px-3 py-2 bg-[#fff] rounded-3xl">
-              <div className="relative w-[40px] h-[30px]">
-              <img
-                src={octoImage}
-                alt=""
-                className="noDrag"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-                />
-
-              </div>
-              <div className="relative w-[70px] h-[30px] ">
-              <img
-                src={githubLogo}
-                alt=""
-                className="noDrag"
-                style={{ objectFit: "contain", width: "100%", height: "100%" }}
-                />
-
-              </div>
-            </div>
-          </Link>
+        <div className="relative w-[70px] h-[30px]">
+          <img src={githubLogo} alt="" className="noDrag" style={{ objectFit: "contain", width: "100%", height: "100%" }} />
         </div>
       </div>
+    </Link>
+  </div>
+</div>
+
     </div>
   );
 }
