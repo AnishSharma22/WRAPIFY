@@ -52,7 +52,7 @@ node index.js
 
 ## Usage
 
-1. Open your web browser and go to http://localhost:3000.
+1. Open your web browser and go to http://localhost:5173.
 2. Log in with your Spotify account.
 3. Explore the various wrap options to see your top tracks, artists, and more.
 4. Enjoy personalized insights into your Spotify journey.
